@@ -4,6 +4,5 @@ const controller = require("./controllers/controller")
 
 router.post("/produto", controller.getProduto)
 router.post("detalhe", controller.getDetalhe)
-router.post("/tamanho", controller.getTamanho)
 
 module.exports = router

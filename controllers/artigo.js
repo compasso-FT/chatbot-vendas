@@ -1,80 +1,113 @@
 module.exports = {
-    artigoFunction: async function (produto) {
-        var mocassim = [{
+    artigoFunction: async function (produto, cor, genero) {
+        var mocassim = {
             id: 550939258,
-            produto: 'MOCASSIM MASCULINO EM COURO NOBUCK',
+            produto: 'MOCASSIM EM COURO NOBUCK',
             cor: 'marrom',
-            preco: '99.90'
-        }]
+            genero: 'masculino',
+            preco: '99,90'
+        }
 
-        var sapatenis = [{
+        var sapatenis = {
             id: 550944313,
-            produto: 'SAPATÊNIS MASCULINO CASUAL EM COURO',
+            produto: 'SAPATÊNIS CASUAL EM COURO',
             cor: 'marrom',
-            preco: '139.90'
-        }]
+            genero: 'masculino',
+            preco: '139,90'
+        }
 
         var tenis = [{
             id: 551210080,
-            produto: 'TÊNIS FEMININO SLIP ON DETALHE EM COBRA',
+            produto: 'TÊNIS SLIP ON DETALHE EM COBRA',
             cor: 'rosa',
-            preco: '99.90'
+            genero: 'feminino',
+            preco: '99,90'
         },
         {
             id: 550905429,
-            produto: 'FEMININO COM SOLA ALTA',
+            produto: 'TÊNIS COM SOLA ALTA',
             cor: 'verde',
-            preco: '139.90'
+            genero: 'feminino',
+            preco: '139,90'
         },
         {
             id: 551514454,
-            produto: 'TÊNIS MASCULINO SNEAKER',
+            produto: 'TÊNIS SNEAKER',
             cor: 'preto',
-            preco: '159.90'
+            genero: 'masculino',
+            preco: '159,90'
         },
         {
             id: 550066004,
             produto: 'TÊNIS INFANTIL COM DETALHE EM LISTRAS',
             cor: 'colorido',
-            preco: '49.90'
+            genero: 'infantil',
+            preco: '49,90'
         },
         {
             id: 550455413,
-            produto: 'TÊNIS FEMININO MEIA KNIT VIZZANO',
+            produto: 'TÊNIS MEIA KNIT VIZZANO',
             cor: 'preto',
-            preco: '169.90'
+            genero: 'feminino',
+            preco: '169,90'
         },
         {
             id: 549149056,
-            produto: 'TÊNIS MASCULINO SLIP ON EM COURO VIKO',
+            produto: 'TÊNIS SLIP ON EM COURO VIKO',
             cor: 'preto',
-            preco: '119.90'
+            genero: 'masculino',
+            preco: '119,90'
         },
         {
             id: 548003080,
-            produto: 'TÊNIS MASCULINO RUNNING VIKO',
+            produto: 'TÊNIS RUNNING VIKO',
             cor: 'marrom',
-            preco: '119.90'
+            genero: 'masculino',
+            preco: '119,90'
         },
         {
             id: 550945017,
-            produto: 'TÊNIS MASCULINO JOGGING',
+            produto: 'TÊNIS JOGGING',
             cor: 'preto',
-            preco: '119.90'
+            genero: 'masculino',
+            preco: '119,90'
         },
         {
             id: 550947266,
-            produto: 'TÊNIS MASCULINO CASUAL EM COURO',
+            produto: 'TÊNIS CASUAL EM COURO',
             cor: 'branco',
-            preco: '119.90'
-        }] 
-        
+            genero: 'masculino',
+            preco: '119,90'
+        }]
+
+        const array = []
         if (produto == 'mocassim') {
-            return mocassim
+            for (var i = 0; i <= produto.length; i++) {
+                if (cor == mocassim.cor) {
+                    array[i] = mocassim
+                }
+                if (genero == mocassim.genero)
+                    array[i] = mocassim
+            }
+            return array
         } else if (produto == 'sapatenis') {
-            return sapatenis
+            for (var i = 0; i <= produto.length; i++) {
+                if (cor == sapatenis.cor) {
+                    array[i] = sapatenis
+                }
+                if (genero == sapatenis.genero)
+                    array[i] = sapatenis
+            }
+            return array
         } else if (produto == 'tenis') {
-            return tenis
+            for (var i = 0; i <= produto.length; i++) {
+                if (cor == tenis[i].cor) {
+                    array[i] = tenis[i]
+                }
+                if (genero == tenis[i].genero)
+                    array[i] = tenis[i]
+            }
+            return array
         } else {
             return "produto não encontrado"
         }

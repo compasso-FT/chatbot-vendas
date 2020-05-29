@@ -14,7 +14,7 @@ module.exports = {
         var resp = removeAcento(str)
         var produtos = ['mocassim', 'sapatenis', 'tenis']
         for (var i = 0; i <= produtos.length; i++) {
-            if(produtos[i] == resp)
+            if (produtos[i] == resp)
                 resp = produtos[i]
         }
         return resp

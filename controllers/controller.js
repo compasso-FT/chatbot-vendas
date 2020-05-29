@@ -1,13 +1,20 @@
 const fetch = require('node-fetch')
+var produto = require('./produto')
+var detalhe = require('./detalhe')
+var id = require('./id')
+var tamanho = require('./tamanho')
 
 exports.getProduto = async(req, res) => {
-    res.send("produto")
+    const produto = `${req.body.produto}`
+    res.send(produto)
 }
 
 exports.getDetalhe = async(req, res) => {
-    res.send("detalhe")
+    const detalhe = `${req.body.detalhe}`
+    res.send(detalhe)
 }
 
 exports.getTamanho = async(req, res) => {
-    res.send("tamanho")
+    const tamanho = `${req.body.tamanho}`
+    res.send(tamanho)
 }

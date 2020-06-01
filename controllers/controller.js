@@ -19,7 +19,11 @@ exports.getDetalhe = async (req, res) => {
 }
 
 exports.getId = async (req, res) => {
-    const id = `${req.body.id}`
+    for (var key in req.body) {
+        if (req.body.hasOwnProperty(key)) {
+            id = req.body[key]
+        }
+    }
     const artigos = await artigo.artigoFunction(0, 0, 0, id)
     res.send(artigos)
 }

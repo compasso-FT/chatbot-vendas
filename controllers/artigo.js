@@ -51,7 +51,7 @@ module.exports = {
             preco: '159,90'
         },
         {
-            id: 550066004,
+            id: 548714631,
             tipo: 'tenis',
             produto: 'TÊNIS ABOTINADO COM CORAÇÕES',
             cor: 'preto',
@@ -61,7 +61,7 @@ module.exports = {
             preco: '49,90'
         },
         {
-            id: 550455413,
+            id: 551518674,
             tipo: 'tenis',
             produto: 'TÊNIS COM SALTO E BRILHOS',
             cor: 'preto',
@@ -111,8 +111,11 @@ module.exports = {
             preco: '119,90'
         }]
 
-        if (idProd != 0) {
-            const result = item.find(prod => prod.id == idProd)
+        if (idProd.length > 0) {
+            var result = []
+            for(var i = 0; i < idProd.length; i++) {
+                result[i] = item.find(prod => prod.id == idProd[i])
+            }
             return result
         } else if (corProd == '' && generoProd == '') {
             function filterByProduto(obj) {

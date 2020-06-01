@@ -5,6 +5,8 @@ module.exports = {
             produto: 'MOCASSIM EM COURO NOBUCK',
             cor: 'marrom',
             genero: 'masculino',
+            image: 'https://img.lojasrenner.com.br/item/550939291/small/2.jpg',
+            url: 'https://www.lojasrenner.com.br/p/mocassim-masculino-em-couro-nobuck/-/A-550939215-br.lr?sku=550939258',
             preco: '99,90'
         }
 
@@ -13,6 +15,8 @@ module.exports = {
             produto: 'SAPATÊNIS CASUAL EM COURO',
             cor: 'marrom',
             genero: 'masculino',
+            image: 'https://img.lojasrenner.com.br/item/550944381/small/2.jpg',
+            url: 'https://www.lojasrenner.com.br/p/sapatenis-masculino-casual-em-couro/-/A-550944292-br.lr?sku=550944313',
             preco: '139,90'
         }
 
@@ -21,6 +25,8 @@ module.exports = {
             produto: 'TÊNIS SLIP ON DETALHE EM COBRA',
             cor: 'rosa',
             genero: 'feminino',
+            imagem: 'https://img.lojasrenner.com.br/item/551210098/small/1.jpg',
+            url: 'https://www.lojasrenner.com.br/p/tenis-feminino-slip-on-detalhe-em-cobra/-/A-551210047-br.lr?sku=551210080',
             preco: '99,90'
         },
         {
@@ -28,6 +34,8 @@ module.exports = {
             produto: 'TÊNIS COM SOLA ALTA',
             cor: 'verde',
             genero: 'feminino',
+            image: 'https://img.lojasrenner.com.br/item/550905429/small/2.jpg',
+            url: 'https://www.lojasrenner.com.br/p/tenis-feminino-com-sola-alta/-/A-550905373-br.lr?sku=550905437',
             preco: '139,90'
         },
         {
@@ -35,20 +43,26 @@ module.exports = {
             produto: 'TÊNIS SNEAKER',
             cor: 'preto',
             genero: 'masculino',
+            image: 'https://img.lojasrenner.com.br/item/551514471/small/1.jpg',
+            url: 'https://www.lojasrenner.com.br/p/tenis-masculino-sneaker/-/A-551514446-br.lr?sku=551514454',
             preco: '159,90'
         },
         {
             id: 550066004,
-            produto: 'TÊNIS INFANTIL COM DETALHE EM LISTRAS',
-            cor: 'colorido',
+            produto: 'TÊNIS ABOTINADO COM CORAÇÕES',
+            cor: 'preto',
             genero: 'infantil',
+            image: 'https://img.lojasrenner.com.br/item/548714682/small/1.jpg',
+            url: 'https://www.lojasrenner.com.br/p/tenis-infantil-abotinado-com-coracoes-tam-28-ao-35/-/A-548714607-br.lr?sku=548714631',
             preco: '49,90'
         },
         {
             id: 550455413,
-            produto: 'TÊNIS MEIA KNIT VIZZANO',
+            produto: 'TÊNIS COM SALTO E BRILHOS',
             cor: 'preto',
             genero: 'feminino',
+            image: 'https://img.lojasrenner.com.br/item/551518711/small/1.jpg',
+            url: 'https://www.lojasrenner.com.br/p/tenis-feminino-com-salto-e-brilhos/-/A-551518666-br.lr?sku=551518674',
             preco: '169,90'
         },
         {
@@ -56,6 +70,8 @@ module.exports = {
             produto: 'TÊNIS SLIP ON EM COURO VIKO',
             cor: 'preto',
             genero: 'masculino',
+            image: 'https://img.lojasrenner.com.br/item/549149030/small/1.jpg',
+            url: 'https://www.lojasrenner.com.br/p/tenis-masculino-slip-on-em-couro-viko/-/A-549149005-br.lr?sku=549149064',
             preco: '119,90'
         },
         {
@@ -63,6 +79,8 @@ module.exports = {
             produto: 'TÊNIS RUNNING VIKO',
             cor: 'marrom',
             genero: 'masculino',
+            image: 'https://img.lojasrenner.com.br/item/548003055/small/2.jpg',
+            url: 'https://www.lojasrenner.com.br/p/tenis-masculino-running-viko/-/A-548003021-br.lr?sku=548003071',
             preco: '119,90'
         },
         {
@@ -70,6 +88,8 @@ module.exports = {
             produto: 'TÊNIS JOGGING',
             cor: 'preto',
             genero: 'masculino',
+            imagem: 'https://img.lojasrenner.com.br/item/550945033/small/2.jpg',
+            url: 'https://www.lojasrenner.com.br/p/tenis-masculino-jogging/-/A-550944962-br.lr?sku=550945017',
             preco: '119,90'
         },
         {
@@ -77,37 +97,37 @@ module.exports = {
             produto: 'TÊNIS CASUAL EM COURO',
             cor: 'branco',
             genero: 'masculino',
+            image: 'https://img.lojasrenner.com.br/item/550947282/small/1.jpg',
+            url: 'https://www.lojasrenner.com.br/p/tenis-masculino-casual-em-couro/-/A-550947207-br.lr?sku=550947266',
             preco: '119,90'
         }]
 
-        const array = []
         if (produto == 'mocassim') {
-            for (var i = 0; i <= produto.length; i++) {
-                if (cor == mocassim.cor) {
-                    array[i] = mocassim
-                }
-                if (genero == mocassim.genero)
-                    array[i] = mocassim
-            }
-            return array
+            var itemMocassim = ''
+            if (cor == mocassim.cor || genero == mocassim.genero) {
+                return itemMocassim = mocassim
+            } else
+                return 'produto indisponível'
         } else if (produto == 'sapatenis') {
-            for (var i = 0; i <= produto.length; i++) {
-                if (cor == sapatenis.cor) {
-                    array[i] = sapatenis
-                }
-                if (genero == sapatenis.genero)
-                    array[i] = sapatenis
-            }
-            return array
+            var itemSapatenis = ''
+            if (cor == sapatenis.cor || genero == sapatenis.genero) {
+                return itemSapatenis = sapatenis
+            } else
+                return 'produto indisponível'
         } else if (produto == 'tenis') {
+            var arrayTenis = []
             for (var i = 0; i <= produto.length; i++) {
-                if (cor == tenis[i].cor) {
-                    array[i] = tenis[i]
+                if (cor == tenis[i].cor || genero == tenis[i].genero) {
+                    arrayTenis[i] = tenis[i]
                 }
-                if (genero == tenis[i].genero)
-                    array[i] = tenis[i]
             }
-            return array
+            var itemTenis = arrayTenis.filter(function (el) {
+                return el != null
+            })
+            if (Array.isArray(itemTenis) && itemTenis.length) {
+                return itemTenis
+            } else
+                return 'produto indisponível'
         } else {
             return "produto não encontrado"
         }

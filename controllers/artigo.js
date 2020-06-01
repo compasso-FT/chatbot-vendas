@@ -125,37 +125,37 @@ module.exports = {
                     return false
                 }
             }
-            var arrayProduto = item.filter(filterByProduto);
+            var arrayProduto = item.filter(filterByProduto)
             return arrayProduto
         } else if (generoProd == '') {
-            function filterByProduto(obj) {
+            function filterByCor(obj) {
                 if ('cor' in obj && obj.cor == corProd && 'tipo' in obj && obj.tipo == produtoProd) {
                     return true
                 } else {
                     return false
                 }
             }
-            var arrayProduto = item.filter(filterByProduto);
+            var arrayProduto = item.filter(filterByCor)
             return arrayProduto
         } else if (corProd == '') {
-            function filterByProduto(obj) {
+            function filterByGenero(obj) {
                 if ('genero' in obj && obj.genero == generoProd && 'tipo' in obj && obj.tipo == produtoProd) {
                     return true
                 } else {
                     return false
                 }
             }
-            var arrayProduto = item.filter(filterByProduto);
+            var arrayProduto = item.filter(filterByGenero)
             return arrayProduto
         } else if (corProd != '' && generoProd != '') {
-            function filterByProduto(obj) {
+            function filterByCorGenero(obj) {
                 if ('cor' in obj && obj.cor == corProd && 'genero' in obj && obj.genero == generoProd && 'tipo' in obj && obj.tipo == produtoProd) {
                     return true
                 } else {
                     return false
                 }
             }
-            var arrayProduto = item.filter(filterByProduto);
+            var arrayProduto = item.filter(filterByCorGenero)
             return arrayProduto
         } else 
             return 'produto não encontrado'

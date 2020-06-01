@@ -1,27 +1,28 @@
 module.exports = {
-    artigoFunction: async function (produto, cor, genero) {
-        var mocassim = {
+    artigoFunction: async function (produtoProd, corProd, generoProd, idProd) {
+        var item = [{
             id: 550939258,
+            tipo: 'mocassim',
             produto: 'MOCASSIM EM COURO NOBUCK',
             cor: 'marrom',
             genero: 'masculino',
             image: 'https://img.lojasrenner.com.br/item/550939291/small/2.jpg',
             url: 'https://www.lojasrenner.com.br/p/mocassim-masculino-em-couro-nobuck/-/A-550939215-br.lr?sku=550939258',
             preco: '99,90'
-        }
-
-        var sapatenis = {
+        },
+        {
             id: 550944313,
+            tipo: 'sapatenis',
             produto: 'SAPATÊNIS CASUAL EM COURO',
             cor: 'marrom',
             genero: 'masculino',
             image: 'https://img.lojasrenner.com.br/item/550944381/small/2.jpg',
             url: 'https://www.lojasrenner.com.br/p/sapatenis-masculino-casual-em-couro/-/A-550944292-br.lr?sku=550944313',
             preco: '139,90'
-        }
-
-        var tenis = [{
+        },
+        {
             id: 551210080,
+            tipo: 'tenis',
             produto: 'TÊNIS SLIP ON DETALHE EM COBRA',
             cor: 'rosa',
             genero: 'feminino',
@@ -31,6 +32,7 @@ module.exports = {
         },
         {
             id: 550905429,
+            tipo: 'tenis',
             produto: 'TÊNIS COM SOLA ALTA',
             cor: 'verde',
             genero: 'feminino',
@@ -40,6 +42,7 @@ module.exports = {
         },
         {
             id: 551514454,
+            tipo: 'tenis',
             produto: 'TÊNIS SNEAKER',
             cor: 'preto',
             genero: 'masculino',
@@ -49,6 +52,7 @@ module.exports = {
         },
         {
             id: 550066004,
+            tipo: 'tenis',
             produto: 'TÊNIS ABOTINADO COM CORAÇÕES',
             cor: 'preto',
             genero: 'infantil',
@@ -58,6 +62,7 @@ module.exports = {
         },
         {
             id: 550455413,
+            tipo: 'tenis',
             produto: 'TÊNIS COM SALTO E BRILHOS',
             cor: 'preto',
             genero: 'feminino',
@@ -67,6 +72,7 @@ module.exports = {
         },
         {
             id: 549149056,
+            tipo: 'tenis',
             produto: 'TÊNIS SLIP ON EM COURO VIKO',
             cor: 'preto',
             genero: 'masculino',
@@ -76,6 +82,7 @@ module.exports = {
         },
         {
             id: 548003080,
+            tipo: 'tenis',
             produto: 'TÊNIS RUNNING VIKO',
             cor: 'marrom',
             genero: 'masculino',
@@ -85,6 +92,7 @@ module.exports = {
         },
         {
             id: 550945017,
+            tipo: 'tenis',
             produto: 'TÊNIS JOGGING',
             cor: 'preto',
             genero: 'masculino',
@@ -94,6 +102,7 @@ module.exports = {
         },
         {
             id: 550947266,
+            tipo: 'tenis',
             produto: 'TÊNIS CASUAL EM COURO',
             cor: 'branco',
             genero: 'masculino',
@@ -102,34 +111,50 @@ module.exports = {
             preco: '119,90'
         }]
 
-        if (produto == 'mocassim') {
-            var itemMocassim = ''
-            if (cor == mocassim.cor || genero == mocassim.genero) {
-                return itemMocassim = mocassim
-            } else
-                return 'produto indisponível'
-        } else if (produto == 'sapatenis') {
-            var itemSapatenis = ''
-            if (cor == sapatenis.cor || genero == sapatenis.genero) {
-                return itemSapatenis = sapatenis
-            } else
-                return 'produto indisponível'
-        } else if (produto == 'tenis') {
-            var arrayTenis = []
-            for (var i = 0; i <= produto.length; i++) {
-                if (cor == tenis[i].cor || genero == tenis[i].genero) {
-                    arrayTenis[i] = tenis[i]
+        if (idProd != 0) {
+            const result = item.find(prod => prod.id == idProd)
+            return result
+        } else if (corProd == '' && generoProd == '') {
+            function filterByProduto(obj) {
+                if ('tipo' in obj && obj.tipo == produtoProd) {
+                    return true
+                } else {
+                    return false
                 }
             }
-            var itemTenis = arrayTenis.filter(function (el) {
-                return el != null
-            })
-            if (Array.isArray(itemTenis) && itemTenis.length) {
-                return itemTenis
-            } else
-                return 'produto indisponível'
-        } else {
-            return "produto não encontrado"
-        }
+            var arrayProduto = item.filter(filterByProduto);
+            return arrayProduto
+        } else if (generoProd == '') {
+            function filterByProduto(obj) {
+                if ('cor' in obj && obj.cor == corProd && 'tipo' in obj && obj.tipo == produtoProd) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+            var arrayProduto = item.filter(filterByProduto);
+            return arrayProduto
+        } else if (corProd == '') {
+            function filterByProduto(obj) {
+                if ('genero' in obj && obj.genero == generoProd && 'tipo' in obj && obj.tipo == produtoProd) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+            var arrayProduto = item.filter(filterByProduto);
+            return arrayProduto
+        } else if (corProd != '' && generoProd != '') {
+            function filterByProduto(obj) {
+                if ('cor' in obj && obj.cor == corProd && 'genero' in obj && obj.genero == generoProd && 'tipo' in obj && obj.tipo == produtoProd) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+            var arrayProduto = item.filter(filterByProduto);
+            return arrayProduto
+        } else 
+            return 'produto não encontrado'
     }
 }

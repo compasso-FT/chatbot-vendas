@@ -117,7 +117,7 @@ module.exports = {
                 result[i] = item.find(prod => prod.id == idProd[i])
             }
             if (result.length)
-                return result
+                return JSON.stringify({...result})
             else
                 return 'produto indisponível'
         } else if (corProd == '' && generoProd == '') {
@@ -130,7 +130,7 @@ module.exports = {
             }
             var arrayProduto = item.filter(filterByProduto)
             if (arrayProduto.length)
-                return arrayProduto
+                return JSON.stringify({...arrayProduto})
             else
                 return 'produto indisponível'
         } else if (generoProd == '') {
@@ -143,7 +143,7 @@ module.exports = {
             }
             var arrayProduto = item.filter(filterByCor)
             if (arrayProduto.length)
-                return arrayProduto
+                return JSON.stringify({...arrayProduto})
             else
                 return 'produto indisponível'
         } else if (corProd == '') {
@@ -156,7 +156,7 @@ module.exports = {
             }
             var arrayProduto = item.filter(filterByGenero)
             if (arrayProduto.length)
-                return arrayProduto
+                return JSON.stringify({...arrayProduto})
             else
                 return 'produto indisponível'
         } else if (corProd != '' && generoProd != '') {
@@ -169,7 +169,7 @@ module.exports = {
             }
             var arrayProduto = item.filter(filterByCorGenero)
             if (arrayProduto.length)
-                return arrayProduto
+                return JSON.stringify({...arrayProduto})
             else
                 return 'produto indisponível'
         } else 

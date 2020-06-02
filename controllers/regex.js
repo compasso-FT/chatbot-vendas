@@ -1,5 +1,5 @@
 module.exports = {
-    produtoFunction: async function (str) {
+    regexFunction: async function (str) {
         removeAcento = (text) => {
             text = text.toLowerCase()
             text = text.replace(new RegExp('[ÁÀÂÃ]', 'gi'), 'a')
@@ -12,11 +12,6 @@ module.exports = {
         }
         var res = ''
         var resp = removeAcento(str)
-        var produtos = ['mocassim', 'sapatenis', 'tenis']
-        for (var i = 0; i <= produtos.length; i++) {
-            if (produtos[i] == resp)
-                resp = produtos[i]
-        }
         return resp
     }
 }

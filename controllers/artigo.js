@@ -116,7 +116,10 @@ module.exports = {
             for(var i = 0; i < idProd.length; i++) {
                 result[i] = item.find(prod => prod.id == idProd[i])
             }
-            return result
+            if (result.length)
+                return result
+            else
+                return 'produto indisponível'
         } else if (corProd == '' && generoProd == '') {
             function filterByProduto(obj) {
                 if ('tipo' in obj && obj.tipo == produtoProd) {
@@ -126,7 +129,10 @@ module.exports = {
                 }
             }
             var arrayProduto = item.filter(filterByProduto)
-            return arrayProduto
+            if (arrayProduto.length)
+                return arrayProduto
+            else
+                return 'produto indisponível'
         } else if (generoProd == '') {
             function filterByCor(obj) {
                 if ('cor' in obj && obj.cor == corProd && 'tipo' in obj && obj.tipo == produtoProd) {
@@ -136,7 +142,10 @@ module.exports = {
                 }
             }
             var arrayProduto = item.filter(filterByCor)
-            return arrayProduto
+            if (arrayProduto.length)
+                return arrayProduto
+            else
+                return 'produto indisponível'
         } else if (corProd == '') {
             function filterByGenero(obj) {
                 if ('genero' in obj && obj.genero == generoProd && 'tipo' in obj && obj.tipo == produtoProd) {
@@ -146,7 +155,10 @@ module.exports = {
                 }
             }
             var arrayProduto = item.filter(filterByGenero)
-            return arrayProduto
+            if (arrayProduto.length)
+                return arrayProduto
+            else
+                return 'produto indisponível'
         } else if (corProd != '' && generoProd != '') {
             function filterByCorGenero(obj) {
                 if ('cor' in obj && obj.cor == corProd && 'genero' in obj && obj.genero == generoProd && 'tipo' in obj && obj.tipo == produtoProd) {
@@ -156,7 +168,10 @@ module.exports = {
                 }
             }
             var arrayProduto = item.filter(filterByCorGenero)
-            return arrayProduto
+            if (arrayProduto.length)
+                return arrayProduto
+            else
+                return 'produto indisponível'
         } else 
             return 'produto não encontrado'
     }

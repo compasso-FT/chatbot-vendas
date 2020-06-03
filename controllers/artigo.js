@@ -26,7 +26,7 @@ module.exports = {
             produto: 'TÊNIS SLIP ON DETALHE EM COBRA',
             cor: 'rosa',
             genero: 'feminino',
-            imagem: 'https://img.lojasrenner.com.br/item/551210098/small/1.jpg',
+            image: 'https://img.lojasrenner.com.br/item/551210098/small/1.jpg',
             url: 'https://www.lojasrenner.com.br/p/tenis-feminino-slip-on-detalhe-em-cobra/-/A-551210047-br.lr?sku=551210080',
             preco: '99,90'
         },
@@ -96,7 +96,7 @@ module.exports = {
             produto: 'TÊNIS JOGGING',
             cor: 'preto',
             genero: 'masculino',
-            imagem: 'https://img.lojasrenner.com.br/item/550945033/small/2.jpg',
+            image: 'https://img.lojasrenner.com.br/item/550945033/small/2.jpg',
             url: 'https://www.lojasrenner.com.br/p/tenis-masculino-jogging/-/A-550944962-br.lr?sku=550945017',
             preco: '119,90'
         },

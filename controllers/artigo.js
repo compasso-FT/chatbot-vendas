@@ -4,6 +4,7 @@ module.exports = {
             id: 550939258,
             tipo: 'mocassim',
             produto: 'MOCASSIM EM COURO NOBUCK',
+            descricao: 'Mocassim em Couro Nobuck',
             cor: 'marrom',
             genero: 'masculino',
             image: 'https://img.lojasrenner.com.br/item/550939291/small/2.jpg',
@@ -14,6 +15,7 @@ module.exports = {
             id: 550944313,
             tipo: 'sapatenis',
             produto: 'SAPATÊNIS CASUAL EM COURO',
+            descricao: 'Sapatênis Casual em Couro',
             cor: 'marrom',
             genero: 'masculino',
             image: 'https://img.lojasrenner.com.br/item/550944381/small/2.jpg',
@@ -24,6 +26,7 @@ module.exports = {
             id: 551210080,
             tipo: 'tenis',
             produto: 'TÊNIS SLIP ON DETALHE EM COBRA',
+            descricao: 'Tênis Slip On Detalhe em Cobra',
             cor: 'rosa',
             genero: 'feminino',
             image: 'https://img.lojasrenner.com.br/item/551210098/small/2.jpg',
@@ -34,6 +37,7 @@ module.exports = {
             id: 550905429,
             tipo: 'tenis',
             produto: 'TÊNIS COM SOLA ALTA',
+            descricao: 'Tênis com Sola Alta',
             cor: 'verde',
             genero: 'feminino',
             image: 'https://img.lojasrenner.com.br/item/550905429/small/2.jpg',
@@ -44,6 +48,7 @@ module.exports = {
             id: 551514454,
             tipo: 'tenis',
             produto: 'TÊNIS SNEAKER',
+            descricao: 'Tênis Sneaker',
             cor: 'preto',
             genero: 'masculino',
             image: 'https://img.lojasrenner.com.br/item/551514471/small/2.jpg',
@@ -54,6 +59,7 @@ module.exports = {
             id: 548714631,
             tipo: 'tenis',
             produto: 'TÊNIS ABOTINADO COM CORAÇÕES',
+            descricao: 'Tênis Abotinado com Corações',
             cor: 'preto',
             genero: 'infantil',
             image: 'https://img.lojasrenner.com.br/item/548714682/small/2.jpg',
@@ -64,6 +70,7 @@ module.exports = {
             id: 551518674,
             tipo: 'tenis',
             produto: 'TÊNIS COM SALTO E BRILHOS',
+            descricao: 'Tênis com Salto e Brilhos',
             cor: 'preto',
             genero: 'feminino',
             image: 'https://img.lojasrenner.com.br/item/551518711/small/2.jpg',
@@ -74,6 +81,7 @@ module.exports = {
             id: 549149056,
             tipo: 'tenis',
             produto: 'TÊNIS SLIP ON EM COURO VIKO',
+            descricao: 'Tênis Slip On em Couro Viko',
             cor: 'preto',
             genero: 'masculino',
             image: 'https://img.lojasrenner.com.br/item/549149030/small/2.jpg',
@@ -84,6 +92,7 @@ module.exports = {
             id: 548003080,
             tipo: 'tenis',
             produto: 'TÊNIS RUNNING VIKO',
+            descricao: 'Tênis Running Viko',
             cor: 'marrom',
             genero: 'masculino',
             image: 'https://img.lojasrenner.com.br/item/548003055/small/2.jpg',
@@ -94,6 +103,7 @@ module.exports = {
             id: 550945017,
             tipo: 'tenis',
             produto: 'TÊNIS JOGGING',
+            descricao: 'Tênis Jogging',
             cor: 'preto',
             genero: 'masculino',
             image: 'https://img.lojasrenner.com.br/item/550945033/small/2.jpg',
@@ -104,6 +114,7 @@ module.exports = {
             id: 550947266,
             tipo: 'tenis',
             produto: 'TÊNIS CASUAL EM COURO',
+            descricao: 'Tênis Casual em Couro',
             cor: 'branco',
             genero: 'masculino',
             image: 'https://img.lojasrenner.com.br/item/550947282/small/2.jpg',
@@ -117,7 +128,6 @@ module.exports = {
                 result[i] = item.find(prod => prod.id == idProd[i])
             }
             if (result.length)
-                //return JSON.stringify({...result})
                 return result
             else
                 return 'produto indisponível'
@@ -131,7 +141,6 @@ module.exports = {
             }
             var arrayProduto = item.filter(filterByProduto)
             if (arrayProduto.length)
-                //return JSON.stringify({...arrayProduto})
                 return arrayProduto
             else
                 return 'produto indisponível'
@@ -145,7 +154,6 @@ module.exports = {
             }
             var arrayProduto = item.filter(filterByCor)
             if (arrayProduto.length)
-                //return JSON.stringify({...arrayProduto})
                 return arrayProduto
             else
                 return 'produto indisponível'
@@ -159,7 +167,6 @@ module.exports = {
             }
             var arrayProduto = item.filter(filterByGenero)
             if (arrayProduto.length)
-                //return JSON.stringify({...arrayProduto})
                 return arrayProduto
             else
                 return 'produto indisponível'
@@ -173,7 +180,6 @@ module.exports = {
             }
             var arrayProduto = item.filter(filterByCorGenero)
             if (arrayProduto.length)
-                //return JSON.stringify({...arrayProduto})
                 return arrayProduto
             else
                 return 'produto indisponível'
